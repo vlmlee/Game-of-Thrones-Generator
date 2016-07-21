@@ -1,8 +1,53 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    font: 14px Space Mono, Helvetica, Arial, sans-serif;
+    color: #f9f9f9;
+    height: 2000px;
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
+}
+
+h1 {
+    font: 4em Roboto;
+}
+
+p {
+    font-size: 1em;
+}
+
+.passage {
+    border: 5px solid #f9f9f9;
+    padding: 20px;
+    margin: 60px;
+}
+
+.container {
+    padding-top: 60px;
+    height: 1000px;
+    width: 100%;
+    text-align: center;
+    background-color: #4A5269;
+}
+
+.main {
+    background-color: #4A5269;
+}
+
+.secondary {
+    background-color: #e9e9e9;
+}
+
+.row {
+    padding: 0;
+    margin: 0;
+}
+
+.button-menu {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.created-by {
+    margin-top: 30px;
 }
