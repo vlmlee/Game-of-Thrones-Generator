@@ -1,7 +1,6 @@
 // Jon Snow POV passage
 // written by Michael Lee
 // v1.0.0
-// Conversation between Jon Snow and Sansa Stark
 
 #include <stdmap.pbi>
 #include <format.pbi>
@@ -12,10 +11,11 @@
 
 passage: 
 	exposition memory PBRK
-	[sansa-positive to-self-positive | sansa-negative envy] sansa-question PBRK
-	reaction to-self-negative stark PBRK
-	to-self-neutral secondary-action white-walkers winter PBRK
-	difficult wanted-to cherished-memory but-winter-is-coming
+	[sansa-positive to-self-positive | sansa-negative envy] sansa-question 
+	reaction " " to-self-negative " " stark PBRK
+	to-self-neutral " " secondary-action white-walkers winter PBRK
+	difficult " He wanted " wanted-to cherished-memory but-winter-is-coming ;
+/*
 	|
 	exposition PBRK
 	to-self-neutral primary-action white-walkers winter PBRK
@@ -28,26 +28,25 @@ passage:
 	primary-action to-self-negative secondary-action PBRK
 	exposition white-walkers winter PBRK
 	difficult wanted-to cherished-memory
-	;
+	; */
 
 /***************
 ** Exposition **
 ***************/
 
 exposition:
-	location random-object weather characters clothing;
+	location " " location>random-object " " weather " " characters " " clothing " ";
 
 primary-action:
 	"walked" |
 	"";
 
 location:
-	"Winterfell"  |
+	"Winterfell" |
 	"The lord's chamber" |
 	"Guest room" |
 	"Mess Hall" |
-	"Castle walls" |
-	"" ;
+	"Castle walls" ;
 
 clothing:
 	"black cloak" |
@@ -55,30 +54,50 @@ clothing:
 	"in black" ;
 
 random-object: 
-	"Winterfell" -> "Barrel" 
-	"The lord's chamber" -> "fireplace"
-	"Guest room" -> "Crest on the wall"
-	"Mess Hall" -> "Long table"
-	"Castle walls" -> "training dummy" ;
+	"Winterfell" <-> "Barrel" 
+	"The lord's chamber" <-> "fireplace"
+	"Guest room" <-> "Crest on the wall"
+	"Mess Hall" <-> "Long table"
+	"Castle walls" <-> "training dummy" ;
+
+weather: 
+	"winter" |
+	"summer" ;
+
+characters:
+	"" ;
 
 /***********
 ** Memory **
 ***********/
 
-secondard-action:
+secondary-action:
 	"" ;
 
 memory: 
-	past-location past-action 
-	[ father bastard | uncle nights-watch ] |
-	"He remembered the deserter that Lord Eddard had beheaded"
+	past-location " " past-action " "
+	[ [ father bastard | uncle nights-watch ] " " |
+	"He remembered the deserter that Lord Eddard had beheaded. " ]
 	;
 
+cherished-memory:
+	"" ;
+
+past-location: 
+	"" ;
+
+past-action:
+	"" ;
+
+/**********
+** Sansa **
+**********/
+
 sansa-positive:
-	"Do you remember when " sansa-memory ;
+	"\"Do you remember when " sansa-memory " ";
 
 sansa-memory: 
-	"Bran rode his first horse? Father was so proud." ;
+	"Bran rode his first horse? Father was so proud.\"" ;
 
 sansa-negative: 
 	"";
@@ -89,8 +108,39 @@ envy:
 sansa-question: 
 	"" ;
 
+/*************
+** Reaction **
+*************/
+
 reaction: 
 	"" ;
+
+/************
+** To Self **
+************/
+
+to-self-positive:
+	"He smiled." |
+	"He grinned." ;
+
+to-self-neutral:
+	"He thought to himself." ;
+
+to-self-negative:
+	"He straighten up." |
+	"He lowered his eyes." |
+	"He frowned." |
+	"He nodded." ;
+
+wanted-to:
+	"to scream" |
+	"to shout" |
+	"to run away" |
+	"to kick" ;
+
+/******************
+** White Walkers **
+******************/
 
 white-walkers: 
 	"" ;
@@ -105,67 +155,43 @@ winter-helper:
 	"" -> "" ;
 
 but-winter-is-coming: 
-	". But winter was coming" ;
-
-difficult:
-	"" ;
-
-cherished-memory:
-	"" ;
-
-past-location: 
-	"" ;
-
-past-action:
-	"" ;
+	". But winter was coming." ;
 
 article: 
 	"" ;
 
+/*********************
+** Helpers (Cliche) **
+*********************/
+
+difficult:
+	"It was difficult." ;
+
 father: 
-	"He was his father's son. " |
-	"What would his father think. " |
-	"What would Lord Eddard say to him. " ;
+	"He was his father's son." |
+	"What would his father think." |
+	"What would Lord Eddard say to him." ;
 
 stark:
-	"Starks are hard to kill" ;
+	"Starks were hard to kill." ;
 
 swore: 
-	"Swore by the old gods and new. "  |
-	"Swore by the old weirwood gods. " ;
+	"Swore by the old gods and new."  |
+	"Swore by the old weirwood gods." ;
 
 bastard:
-	"A bastard born at war. " |
-	"But he was a bastard. " |
-	"If only he was born a Stark. " |
-	"He was a Snow. " |
-	"A bastard. " |
-	"He would never be a Stark. " |
-	"He wasn't really one of the Starks. " ;
+	"A bastard born at war." |
+	"But he was a bastard." |
+	"If only he was born a Stark." |
+	"But he was a Snow." |
+	"A bastard." |
+	"But he would never be a Stark." |
+	"But he wasn't really one of the Starks." ;
 
-to-self-positive:
-	"He smiled. " |
-	"He grinned. " ;
-
-to-self-neutral:
-	"He thought to himself. " ;
-
-to-self-negative:
-	"He straighten up. " |
-	"He lowered his eyes. " |
-	"He frowned. " |
-	"He nodded. " ;
-
-wanted-to:
-	"to scream" |
-	"to shout" |
-	"to run away" |
-	"to kick" ;
-
-characteristics:
-	"His black hair " |
-	"His grey eyes " |
-	"His stark gaze " |
-	"His smoky demeanor " 
+characteristic:
+	"His black hair" |
+	"His grey eyes" |
+	"His stark gaze" |
+	"His smoky demeanor" 
 	"";
 
