@@ -6,7 +6,10 @@
 #include <stdmap.pbi>
 #include <format.pbi>
 
-//---Main Passage---//
+/*****************
+** Main Passage **
+*****************/
+
 passage: 
 	exposition memory PBRK
 	[sansa-positive to-self-positive | sansa-negative envy] sansa-question PBRK
@@ -27,13 +30,16 @@ passage:
 	difficult wanted-to cherished-memory
 	;
 
-//---Exposition---//
+/***************
+** Exposition **
+***************/
+
 exposition:
 	location random-object weather characters clothing;
 
 primary-action:
 	"walked" |
-	";
+	"";
 
 location:
 	"Winterfell"  |
@@ -55,7 +61,10 @@ random-object:
 	"Mess Hall" -> "Long table"
 	"Castle walls" -> "training dummy" ;
 
-//---Memory---//
+/***********
+** Memory **
+***********/
+
 secondard-action:
 	"" ;
 
@@ -111,9 +120,7 @@ past-action:
 	"" ;
 
 article: 
-	// maps articles to an item
 	"" ;
-
 
 father: 
 	"He was his father's son. " |
