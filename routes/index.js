@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/jon', function(req, res) {
-    var child = spawn('ls', ['.']);
+    var child = spawn('echo', ['./lib/50.pb']);
     child.stdout.on('data', function(data) {
         res.setHeader('Content-Type', 'text/plain');
         res.send(data);
@@ -24,5 +24,14 @@ router.get('/davos', function(req, res) {
         child.kill();
     });
 });
+
+router.get('/arya', function(req, res) {
+    var child = spawn('echo', ['arya']);
+    child.stdout.on('data', function(data) {
+        res.setHeader('Content-Type', 'text/plain');
+        res.send(data);
+        child.kill();
+    });
+})
 
 module.exports = router;

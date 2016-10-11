@@ -6,27 +6,70 @@
 #include <stdmap.pbi>
 #include <format.pbi>
 
+//---Main Passage---//
 passage: 
 	exposition memory PBRK
-	[sansa-positive | sansa-negative envy] sansa-question PBRK
+	[sansa-positive to-self-positive | sansa-negative envy] sansa-question PBRK
 	reaction to-self-negative stark PBRK
-	to-self-neutral action white-walkers winter PBRK
-	difficult wanted-to cherished-memory 
+	to-self-neutral secondary-action white-walkers winter PBRK
+	difficult wanted-to cherished-memory but-winter-is-coming
+	|
+	exposition PBRK
+	to-self-neutral primary-action white-walkers winter PBRK
+	characteristic secondary-action PBRK
+	|
+	memory to-self-positive primary-action PBRK
+	white-walkers winter secondary-action PBRK
+	exposition PBRK
+	|
+	primary-action to-self-negative secondary-action PBRK
+	exposition white-walkers winter PBRK
+	difficult wanted-to cherished-memory
 	;
 
+//---Exposition---//
 exposition:
-	clothing ;
+	location random-object weather characters clothing;
 
-action:
+primary-action:
+	"walked" |
+	";
+
+location:
+	"Winterfell"  |
+	"The lord's chamber" |
+	"Guest room" |
+	"Mess Hall" |
+	"Castle walls" |
+	"" ;
+
+clothing:
+	"black cloak" |
+	"black gloves" |
+	"in black" ;
+
+random-object: 
+	"Winterfell" -> "Barrel" 
+	"The lord's chamber" -> "fireplace"
+	"Guest room" -> "Crest on the wall"
+	"Mess Hall" -> "Long table"
+	"Castle walls" -> "training dummy" ;
+
+//---Memory---//
+secondard-action:
 	"" ;
 
 memory: 
 	past-location past-action 
-	[ father bastard | uncle nights-watch ]
+	[ father bastard | uncle nights-watch ] |
+	"He remembered the deserter that Lord Eddard had beheaded"
 	;
 
 sansa-positive:
-	"" ;
+	"Do you remember when " sansa-memory ;
+
+sansa-memory: 
+	"Bran rode his first horse? Father was so proud." ;
 
 sansa-negative: 
 	"";
@@ -47,10 +90,13 @@ winter:
 	[ "It was cold" |
 	"The snow piled high" |
 	"The snow was 20 feet deep" |
-	"The winds were fierce" ] winter-is-coming ;
+	"The winds were fierce" ] ;
 
-winter-is-coming: 
-	". Winter is coming" ;
+winter-helper:
+	"" -> "" ;
+
+but-winter-is-coming: 
+	". But winter was coming" ;
 
 difficult:
 	"" ;
@@ -63,6 +109,11 @@ past-location:
 
 past-action:
 	"" ;
+
+article: 
+	// maps articles to an item
+	"" ;
+
 
 father: 
 	"He was his father's son. " |
@@ -110,9 +161,4 @@ characteristics:
 	"His stark gaze " |
 	"His smoky demeanor " 
 	"";
-
-clothing:
-	"black cloak" |
-	"black gloves" |
-	"in black" ;
 

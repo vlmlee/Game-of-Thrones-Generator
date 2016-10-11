@@ -11,4 +11,10 @@ $(document).ready(function() {
             $('.passage').html(text);
         }, 'text');
     });
+
+    $('.arya').click(function() {
+        $.get('/arya', function(text) {
+            $('.passage').html(text);
+        }, 'text');
+    });
 });
