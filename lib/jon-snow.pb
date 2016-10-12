@@ -35,7 +35,7 @@ passage:
 ***************/
 
 exposition:
-	location " " location>random-object " " weather " " characters " " clothing " ";
+	"Jon " location " " location>random-object " " weather " " characters " " clothing " ";
 
 primary-action:
 	"walked" |
