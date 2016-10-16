@@ -15,6 +15,7 @@ passage:
 	reaction " " to-self-negative " " stark PBRK
 	to-self-neutral " " secondary-action white-walkers winter PBRK
 	difficult " He wanted " wanted-to cherished-memory but-winter-is-coming ;
+
 /*
 	|
 	exposition PBRK
@@ -28,43 +29,71 @@ passage:
 	primary-action to-self-negative secondary-action PBRK
 	exposition white-walkers winter PBRK
 	difficult wanted-to cherished-memory
-	; */
+	; 
+*/
 
 /***************
 ** Exposition **
 ***************/
 
 exposition:
-	"Jon " location " " location>random-object " " weather " " characters " " clothing " ";
+	"Jon " primary-action " into " location ". The " location>random-object " and " weather " " clothing " ";
+
+/* [Jon does something] [Describe Jon] [Location] [Describe location] */
 
 primary-action:
 	"walked" |
+	"paced" |
+	"wandered" |
 	"";
 
 location:
 	"Winterfell" |
 	"The lord's chamber" |
-	"Guest room" |
-	"Mess Hall" |
-	"Castle walls" ;
+	"the guest room" |
+	"the mess hall" |
+	"the castle walls" ;
 
 clothing:
-	"black cloak" |
+	"black wool cloak" |
 	"black gloves" |
-	"in black" ;
+	"black tunic" |
+	"leather jerkin" |
+	"roughspun breeches" |
+	"";
 
 random-object: 
 	"Winterfell" <-> "Barrel" 
 	"The lord's chamber" <-> "fireplace"
-	"Guest room" <-> "Crest on the wall"
-	"Mess Hall" <-> "Long table"
+	"Guest room" <-> "direwolf sigil on the wall"
+	"Mess Hall" <-> "long table"
 	"Castle walls" <-> "training dummy" ;
 
 weather: 
 	"winter" |
 	"summer" ;
 
-characters:
+weather-adj: 
+	"musty" |
+	"stale" |
+	"cold" |
+	"freezing" |
+	"wet" |
+	"moody" |
+	"" ; 
+
+remark:
+	"" ;
+
+/***********************
+** Exposition Helpers **
+***********************/
+
+article:
+	"" ;
+
+adverb:
+	"softly" |
 	"" ;
 
 /***********
@@ -77,10 +106,11 @@ secondary-action:
 memory: 
 	past-location " " past-action " "
 	[ [ father bastard | uncle nights-watch ] " " |
-	"He remembered the deserter that Lord Eddard had beheaded. " ]
-	;
+	"He remembered the deserter that Lord Eddard had beheaded. " ] ;
 
 cherished-memory:
+	"The first hunt" |
+	"Him and Robb sparring in the keep." |
 	"" ;
 
 past-location: 
@@ -94,13 +124,17 @@ past-action:
 **********/
 
 sansa-positive:
-	"\"Do you remember when " sansa-memory " ";
+	"\"Do you remember " sansa-memory " ";
 
 sansa-memory: 
-	"Bran rode his first horse? Father was so proud.\"" ;
+	"when Bran rode his first horse? Father was so proud.\"" |
+	"when Robb stole redwine and got drunk? We all promised not to tell Father.\"" |
+	"the way Bran used to laugh before he lost his legs.\"" |
+	"the stories that Old Nan would to tell us?\"" |
+	"";
 
 sansa-negative: 
-	"";
+	"\"They beheaded him. I saw them.\"";
 
 envy:
 	"" ;
@@ -113,37 +147,53 @@ sansa-question:
 *************/
 
 reaction: 
-	"" ;
+	"Jon remembered. It was so long ago." ;
+
+reaction-adj:
+	"recounted" |
+	"thought back" ;
 
 /************
 ** To Self **
 ************/
 
 to-self-positive:
-	"He smiled." |
-	"He grinned." ;
+	"He shook his head and smiled." |
+	"He grinned." |
+	"That memory made him yearn for the past." |
+	"He loved his family.";
 
 to-self-neutral:
-	"He thought to himself." ;
+	"He thought to himself." |
+	"He wondered what had gotten into him." |
+	"He understood it all too well." |
+	"Jon was done with it." |
+	"Jon kept silent.";
 
 to-self-negative:
 	"He straighten up." |
 	"He lowered his eyes." |
 	"He frowned." |
-	"He nodded." ;
+	"He took a deep breath." |
+	"He nodded." |
+	"Pain throbbed through his side. He tried to brush it off.";
 
 wanted-to:
 	"to scream" |
 	"to shout" |
 	"to run away" |
-	"to kick" ;
+	"to leave it all behind" ;
 
 /******************
 ** White Walkers **
 ******************/
 
 white-walkers: 
-	"" ;
+	"the Others were coming" |
+	"there was no escaping the Others." |
+	"the White Walkers would come South and reap." |
+	"the Others were on them." |
+	"the Others would lay waste to the Seven Kingdoms.";
 
 winter: 
 	[ "It was cold" |
@@ -165,19 +215,24 @@ article:
 *********************/
 
 difficult:
-	"It was difficult." ;
+	"It was difficult." |
+	"They stood there in silence." |
+	"";
 
 father: 
 	"He was his father's son." |
 	"What would his father think." |
-	"What would Lord Eddard say to him." ;
+	"What would Lord Eddard say to him." |
+	"After all, he was his father's son." ;
 
 stark:
+	"The direwolf sigil of House Stark." |
 	"Starks were hard to kill." ;
 
 swore: 
 	"Swore by the old gods and new."  |
-	"Swore by the old weirwood gods." ;
+	"Swore by the old weirwood gods." |
+	"";
 
 bastard:
 	"A bastard born at war." |
@@ -186,12 +241,26 @@ bastard:
 	"But he was a Snow." |
 	"A bastard." |
 	"But he would never be a Stark." |
-	"But he wasn't really one of the Starks." ;
+	"But he wasn't really one of the Starks." |
+	"He had no rights to land and name. He was a bastard.";
 
 characteristic:
 	"His black hair" |
 	"His grey eyes" |
 	"His stark gaze" |
-	"His smoky demeanor" 
-	"";
+	"His smoky demeanor" ;
+
+eyes-adj:
+	"grey" |
+	"stark" |
+	"smoky" |
+	"bold" |
+	"firm" |
+	"barren" ;
+
+hair-adj: 
+	"black" |
+	"dark" |
+	"unkept" |
+	"wily" ;
 
