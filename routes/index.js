@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/jon', function(req, res) {
-    var child = spawn('echo', ['./lib/50.pb']);
+    var child = spawn('dada', ['./lib/jon-snow.pb']);
     child.stdout.on('data', function(data) {
         res.setHeader('Content-Type', 'text/plain');
         res.send(data);
