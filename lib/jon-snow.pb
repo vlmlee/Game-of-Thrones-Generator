@@ -13,7 +13,7 @@ passage:
 	exposition memory PBRK
 	[sansa-positive to-self-positive | sansa-negative envy] sansa-question 
 	reaction " " to-self-negative " " stark PBRK
-	to-self-neutral " " secondary-action white-walkers winter PBRK
+	to-self-neutral " " secondary-action " " white-walkers " " winter PBRK
 	difficult " He wanted " wanted-to cherished-memory but-winter-is-coming ;
 
 /*
@@ -37,7 +37,7 @@ passage:
 ***************/
 
 exposition:
-	"Jon " primary-action " into " location ". The " location>random-object " and " weather " " clothing " ";
+	"Jon " primary-action " into " location ". The " location>random-object " and " weather " " clothing ". Sansa was there." ;
 
 /* [Jon does something] [Describe Jon] [Location] [Describe location] */
 
@@ -49,7 +49,7 @@ primary-action:
 
 location:
 	"Winterfell" |
-	"The lord's chamber" |
+	"the lord's chamber" |
 	"the guest room" |
 	"the mess hall" |
 	"the castle walls" ;
@@ -63,11 +63,11 @@ clothing:
 	"";
 
 random-object: 
-	"Winterfell" <-> "Barrel" 
-	"The lord's chamber" <-> "fireplace"
-	"Guest room" <-> "direwolf sigil on the wall"
-	"Mess Hall" <-> "long table"
-	"Castle walls" <-> "training dummy" ;
+	"Winterfell" <-> "The barrel was lit" 
+	"the lord's chamber" <-> "The fireplace were one"
+	"the guest room" <-> "the direwolf sigil on the wall"
+	"the mess hall" <-> "super long table"
+	"the castle walls" <-> "it was a training dummy" ;
 
 weather: 
 	"winter" |
@@ -105,12 +105,12 @@ secondary-action:
 
 memory: 
 	past-location " " past-action " "
-	[ [ father bastard | uncle nights-watch ] " " |
-	"He remembered the deserter that Lord Eddard had beheaded. " ] ;
+	[ [ father " " bastard | uncle " " nights-watch ] " " |
+	"He remembered the deserter that Lord Eddard had beheaded" ] ;
 
 cherished-memory:
 	"The first hunt" |
-	"Him and Robb sparring in the keep." |
+	"Him and Robb sparring in the keep" |
 	"" ;
 
 past-location: 
@@ -190,10 +190,10 @@ wanted-to:
 
 white-walkers: 
 	"the Others were coming" |
-	"there was no escaping the Others." |
-	"the White Walkers would come South and reap." |
-	"the Others were on them." |
-	"the Others would lay waste to the Seven Kingdoms.";
+	"there was no escaping the Others" |
+	"the White Walkers would come South and reap" |
+	"the Others were on them" |
+	"the Others would lay waste to the Seven Kingdoms" ;
 
 winter: 
 	[ "It was cold" |
@@ -205,7 +205,7 @@ winter-helper:
 	"" -> "" ;
 
 but-winter-is-coming: 
-	". But winter was coming." ;
+	"But winter was coming." ;
 
 article: 
 	"" ;
@@ -217,7 +217,7 @@ article:
 difficult:
 	"It was difficult." |
 	"They stood there in silence." |
-	"";
+	"Difficult it was.";
 
 father: 
 	"He was his father's son." |
