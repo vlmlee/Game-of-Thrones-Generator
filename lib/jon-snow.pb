@@ -201,7 +201,7 @@ winter:
 	"The snow was 20 feet deep" |
 	"The winds were fierce" ] ;
 
-winter-helper:
+winter-adj:
 	"" -> "" ;
 
 but-winter-is-coming: 

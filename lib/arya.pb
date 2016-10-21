@@ -1,4 +1,4 @@
-// Davos Seaworth POV passage
+// Arya Stark POV passage
 // written by Michael Lee
 // v1.0.0
 

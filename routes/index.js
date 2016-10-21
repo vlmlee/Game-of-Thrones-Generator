@@ -17,7 +17,7 @@ router.get('/jon', function(req, res) {
 });
 
 router.get('/davos', function(req, res) {
-    var child = spawn('echo', ['this works']);
+    var child = spawn('dada', ['./lib/davos-seaworth.pb']);
     child.stdout.on('data', function(data) {
         res.setHeader('Content-Type', 'text/plain');
         res.send(data);
@@ -26,7 +26,7 @@ router.get('/davos', function(req, res) {
 });
 
 router.get('/arya', function(req, res) {
-    var child = spawn('echo', ['arya']);
+    var child = spawn('dada', ['./lib/arya.pb']);
     child.stdout.on('data', function(data) {
         res.setHeader('Content-Type', 'text/plain');
         res.send(data);
