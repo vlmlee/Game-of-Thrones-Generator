@@ -9,4 +9,4 @@
 ** Main Passage **
 *****************/
 
-passage: "Work in progress."
+passage: "Work in progress." ;
