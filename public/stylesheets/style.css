@@ -1,5 +1,5 @@
 body {
-    font: 14px Space Mono, Helvetica, Arial, sans-serif;
+    font: 14px 'Source Code Pro', Space Mono, Helvetica, Arial, sans-serif;
     color: #ffffff;
     position: fixed;
     padding: 0;
@@ -29,6 +29,7 @@ p {
     margin: 60px;
     text-align: left;
     background-color: rgba(25, 25, 25, 0.2);
+    letter-spacing: 1.5px;
 }
 
 .container {
