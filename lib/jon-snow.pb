@@ -15,9 +15,6 @@ passage:
 	reaction " " to-self-negative " " stark PBRK
 	to-self-neutral " " secondary-action " " white-walkers " " winter PBRK
 	difficult " He wanted " wanted-to " " but-winter-is-coming
-	;
-
-/*
 	|
 	exposition PBRK
 	to-self-neutral primary-action white-walkers winter PBRK
@@ -30,8 +27,8 @@ passage:
 	primary-action to-self-negative secondary-action PBRK
 	exposition white-walkers winter PBRK
 	difficult wanted-to cherished-memory
-	; 
-*/
+	;
+
 /***************
 ** Exposition **
 ***************/
@@ -71,7 +68,14 @@ random-object:
 
 weather: 
 	"winter" |
-	"summer" ;
+	"summer" |
+	"rainy" |
+	"sunny" |
+	"cold" |
+	"warm" |
+	"sultry" |
+	"arid" 
+	;
 
 weather-adj: 
 	"musty" |
